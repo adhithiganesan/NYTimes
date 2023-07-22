@@ -1,0 +1,73 @@
+/* H1 Styling */
+h1{
+    text-align: center;
+    display: flex;
+}
+
+.h1Image{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+/* Line Styling */
+.line {
+    width: 90%;
+    height: 1px;
+    background-color: lightgrey;
+    margin: 0 auto;
+}
+/* Double Line Styling */
+.double_line {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    margin: 0 auto; 
+    line-height: 100px;
+}
+br {
+    line-height: 10px;
+ }
+  
+/* Nav Bar Styling */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+
+    margin-left: 120px;
+}
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: black;
+    font-family: Helvetica;
+    font-size: small;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+}
+
+/* Div styling */
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.whole_page{
+
+}
+  
+  
+
+
+

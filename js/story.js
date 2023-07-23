@@ -1,9 +1,9 @@
 // story.js
 // Custom Element for each story
 
-class story extends HTMLElement {
-    // Called once when document.createElement('recipe-card') is called, or
-    // the element is written into the DOM directly as <recipe-card>
+class Story extends HTMLElement {
+    // Called once when document.createElement('story') is called, or
+    // the element is written into the DOM directly as <story>
     constructor() {
       super(); // Inheret everything from HTMLElement
   
@@ -11,14 +11,14 @@ class story extends HTMLElement {
       this.attachShadow({ mode: 'open' });
   
       // This element will hold our markup once our data is set
-      const article = document.createElement('article');
+      const story = document.createElement('story');
   
       // This style element will hold all of the styles for the Web Component
-      const styles = document.createElement('style');
+      const style = document.createElement('style');
       // Insert all of the styles in to the <style> element
-      styles.innerHTML = `
+      style.innerHTML = `
         * {
-          font-family: sans-serif;
+          font-family: helvetica;
           margin: 0;
           padding: 0;
         }
@@ -26,10 +26,7 @@ class story extends HTMLElement {
         a {
           text-decoration: none;
         }
-  
-        a:hover {
-          text-decoration: underline;
-        }
+
         
         article {
           align-items: center;
@@ -43,18 +40,6 @@ class story extends HTMLElement {
           width: 178px;
         }
   
-        div.rating {
-          align-items: center;
-          column-gap: 5px;
-          display: flex;
-        }
-        
-        div.rating > img {
-          height: auto;
-          display: inline-block;
-          object-fit: scale-down;
-          width: 78px;
-        }
   
         article > img {
           border-top-left-radius: 8px;
@@ -93,7 +78,7 @@ class story extends HTMLElement {
       `;
   
       // Append the <style> and <article> elements to the Shadow DOM
-      this.shadowRoot.append(styles, article);
+      this.shadowRoot.append(style, story);
     }
   
     /**
@@ -122,26 +107,20 @@ class story extends HTMLElement {
       if (!data) return;
   
       // Select the <article> we added to the Shadow DOM in the constructor
-      const article = this.shadowRoot.querySelector('article');
+      const story = this.shadowRoot.querySelector('story');
   
-      // Set the contents of the <article> with the <recipe-card> template and
+      // Set the contents of the <story> with the <story> template and
       // the data passed in
-      article.innerHTML = `
+      story.innerHTML = `
         <img src="${data.imgSrc}" alt="${data.imgAlt}">
         <p class="title">
           <a href="${data.titleLnk}">${data.titleTxt}</a>
         </p>
-        <p class="organization">${data.organization}</p>
-        <div class="rating">
-          <span>${data.rating}</span>
-          <img src="./assets/images/icons/${data.rating}-star.svg" alt="${data.rating} stars">
-          <span>(${data.numRatings})</span>
-        </div>
-        <time>${data.lengthTime}</time>
-        <p class="ingredients">${data.ingredients}</p>
+        <p class="summary">${data.summary}</p>
+        <p class="readTime">${data.readTime}</p>
       `;
     }
   }
   
   // Define the Class so you can use it as a custom element
-  customElements.define('recipe-card', RecipeCard);
+  customElements.define('story', Story);

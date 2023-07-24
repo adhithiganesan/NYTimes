@@ -20,11 +20,10 @@ h1{
 }
 /* Double Line Styling */
 .double_line {
+    border-bottom: 3px double #333;
+    padding: 100px 100;
+    margin: 0 auto;
     width: 90%;
-    height: 1px;
-    background-color: black;
-    margin: 0 auto; 
-    line-height: 100px;
 }
 br {
     line-height: 10px;

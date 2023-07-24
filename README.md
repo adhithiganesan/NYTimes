@@ -7,4 +7,4 @@ Initial version: using localStorage and stories written by me
 Future plans:
 - using NYTimes API to display stories
 
-Link to site: 
+Link to site: https://adhithiganesan.github.io/NYTimes/html/index.html

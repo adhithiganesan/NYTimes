@@ -53,15 +53,22 @@ li a {
     text-decoration: none;
 }
 
-/* Div styling */
-.container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+/* Article Layout Styling */
+.whole_page {
+    width: 90%;
+    margin: 0 auto;
 }
+  
+.left_side {
+    width: calc(58% - 5%);
+    margin-left: 5%;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left (start) horizontally */
+    align-items: center;
+  }
+  
+  
+  
 
   
 

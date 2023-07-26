@@ -5,13 +5,10 @@
         <title> The New York Times</title>
         <meta data = "true" name = "site_description" content = "little side project by a soon to be college graduate seeking employment lol please hire me.">
         <link rel="stylesheet" href="../css/index.css">
-        <script src="../js/story.js" type="module"></script>
         <link rel="icon" type="image/png" href="../images/favicon.png">
 
         <!--Scripts-->
         <noscript>You need to enable JavaScript to load this site.</noscript>
-        <script src=".../js/index.js" type="module"></script>
-        <script src=".../js/story.js" type="module"></script>
     </head>
 
     <body>
@@ -49,11 +46,20 @@
 
           <div class="double_line"></div> 
     
+        <br>
 
-          <div class = "whole_page">
-            <div class = "left_side"></div>
-            <div class = "right_side"></div>
-          </div>
-        
+
+            <div class = "left_side">
+                <story-card></story-card>
+            </div>
+            <div class = "right_side">
+                <!--Add right side stories-->
+            </div>
+
+
     </body>
+    <footer>
+        <!--Story Card Custom Element-->
+        <script src="../js/story-card.js" type="module"></script>
+    </footer>
 </html>

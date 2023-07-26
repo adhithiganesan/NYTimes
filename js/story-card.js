@@ -35,6 +35,7 @@ class Story extends HTMLElement {
         display: flex; /* Use flexbox to arrange the text in a column */
         flex-direction: column; /* Display the elements in a column */
         align-items:flex-start;
+        display: block;
       }
 
       /* Custom styles for the link */
@@ -56,6 +57,12 @@ class Story extends HTMLElement {
         color: #70757A;
         font-size: small;
       }
+      .line {
+        width: 90%;
+        height: 1px;
+        background-color: lightgrey;
+        margin: 0 auto;
+    }
     `;
 
 
@@ -73,8 +80,7 @@ class Story extends HTMLElement {
         </p>
         <p class="summary">${data.summary}</p>
         <br>
-        <p class="readTime">${data.readTime}</p>
-        
+        <p class="readTime">${data.readTime}</p>  
       </div>
       <img src="${data.imgSrc}" alt="${data.imgAlt}">
     `;

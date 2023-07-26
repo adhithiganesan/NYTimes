@@ -25,9 +25,6 @@ h1{
     margin: 0 auto;
     width: 90%;
 }
-br {
-    line-height: 10px;
- }
   
 /* Nav Bar Styling */
 ul {
@@ -40,7 +37,8 @@ ul {
     margin-left: 120px;
 }
 li {
-    float: left;
+    float:left;
+
 }
   
 li a {
@@ -67,7 +65,9 @@ li a {
     align-items: center;
   }
   
-  
+.RegionNavBar{
+    font-size: xx-small;
+}
   
 
   

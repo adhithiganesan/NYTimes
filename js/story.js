@@ -123,4 +123,4 @@ class Story extends HTMLElement {
   }
   
   // Define the Class so you can use it as a custom element
-  customElements.define('story', Story);
+  customElements.define('story-card', Story);

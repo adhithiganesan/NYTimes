@@ -3,12 +3,23 @@ h1{
     text-align: center;
     display: flex;
 }
-
-.h1Image{
-    display:flex;
-    justify-content: center;
+.container {
+    display: flex;
     align-items: center;
-    height: 10vh;
+    justify-content: flex;
+    margin-left: 5%;
+    max-width: 90%;
+}
+#date, #paper{
+    margin-right: 22%;
+}
+
+#date {
+    margin-right: 10px;
+}
+
+.h1Image {
+    width: 400px;
 }
 
 /* Line Styling */

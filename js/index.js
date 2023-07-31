@@ -19,3 +19,6 @@
 
     document.getElementById("date").innerHTML = dateString;
 
+window.addEventListener("DOMContentLoaded", (event) => {
+    window.alert("This is not actually the NYTimes, this is a personal project by Adhithi Ganesan. @NYTimes please don't sue me, I included your API logo. I would appreciate a job offer though, hmu on LinkedIn.");
+});

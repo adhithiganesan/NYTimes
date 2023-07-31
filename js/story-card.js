@@ -42,7 +42,7 @@ class Story extends HTMLElement {
       article p.title a {
         color: black;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: none;
         font-size: xx-large;
       }
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const storyData = {
     imgSrc: '../images/gemini.png',
     imgAlt: 'Picture of Cat',
-    titleLnk: 'catStory.html',
+    titleLnk: '../html/catStory.html',
     titleTxt: "Why cats are a woman's best friend",
     summary: 'Adopting a cat just might fix the hole in your heart. Learn why adopting a cat is the most feminist thing you could do.',
     readTime: '5 MIN READ', 

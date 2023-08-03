@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imgAlt: 'Picture of Cat',
     titleLnk: '../html/catStory.html',
     titleTxt: "Why cats are a woman's best friend",
-    summary: 'Adopting a cat just might fix the hole in your heart. Learn why adopting a cat is the most feminist thing you could do.',
+    summary: 'Adopting a cat just might fix the hole in your heart. Learn why this is the most feminist thing you could do.',
     readTime: '5 MIN READ', 
   };
   storyCardElement.data = storyData;

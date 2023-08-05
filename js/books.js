@@ -121,7 +121,7 @@ async function fetchBookData() {
         console.error('Error fetching data:', error);
       }
 }
-//FUNCTION: fetches book pictures from provided APIs and adds to imageArray
+// FUNCTION: fetches book pictures from provided APIs and adds to imageArray
 async function fetchBookPictures(bookPictureURLS) {
     const imageArray = [];
   
@@ -140,7 +140,18 @@ async function fetchBookPictures(bookPictureURLS) {
     }
   
     return imageArray;
-}
+  }
+  // Now, after calling fetchBookData() to create Book elements, call fetchBookPictures() with the URLs.
+  async function fetchAndCreateBooks() {
+    const data = await fetchBookData();
+    const books = data.results.lists[0].books;
+
+    const bookPictureURLS = books.map(book => book.book_image);
+    const imageArray = await fetchBookPictures(bookPictureURLS);
+
+    // Do something with the imageArray if needed.
+  }
   
-fetchBookData();
-//fetchBookPictures();
+  
+fetchAndCreateBooks();
+  

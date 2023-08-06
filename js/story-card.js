@@ -7,7 +7,6 @@ class Story extends HTMLElement {
     const article = document.createElement('article');
     const style = document.createElement('style');
 
-    // Define your custom styles here using style.innerHTML
     style.innerHTML = `
       * {
         font-family: georgia;

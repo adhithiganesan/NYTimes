@@ -1,13 +1,16 @@
 //Book custom element
 class Book extends HTMLElement {
     constructor() {
+    //super() called to call constructor of parent class (HTMLElement) so custom web component inherits all properties/methods of parent class
       super();
-  
+        
+      //create shadowDOM for custom element to manipulate it using JS
       this.attachShadow({ mode: 'open' });
   
       this.bookCard = document.createElement('bookCard');
       const style = document.createElement('style');
   
+      //styling for book card
       style.innerHTML = `
         * {
           font-family: georgia;
@@ -62,28 +65,30 @@ class Book extends HTMLElement {
       }
       `;
   
-  
+      //attaching bookCard custom element and styling to shadowDOM
       this.shadowRoot.append(style, this.bookCard);
-}
-  
-    set data(data) {
-      if (!data) return;
-  
-      const article = this.shadowRoot.querySelector('bookCard');
-      this.bookCard.innerHTML = `
-        <div class="text_container">
-          <p class="title">
-            <a>${data.titleTxt}</a>
-          </p>
-          <p class="author">${data.author}</p>
-          <br>
-          <p class="summary">${data.summary}</p>  
-        </div>
-        <img src="${data.imgSrc}">
-      `;
     }
-  }
-  
+
+    //setting data of custom element
+    set data(data) {
+        if (!data) return;
+    
+        this.bookCard = this.shadowRoot.querySelector('bookCard');
+        //update bookCard's innerHTML
+        this.bookCard.innerHTML = `
+            <div class="text_container">
+            <p class="title">
+                <a>${data.bookTitle}</a>
+            </p>
+            <p class="author">${data.author}</p>
+            <br>
+            <p class="summary">${data.summary}</p>  
+            </div>
+            <img src="${data.bookImage}">
+        `;
+    }
+}
+//defining new book-card element which belongs to the Book class 
 customElements.define('book-card', Book);
   
 //NYTimes API Info 
@@ -92,66 +97,49 @@ const apiUrl = `https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key
 
 //FUNCTION: fetches book titles, authors, summaries, and picture URLs from NYTimes API and creates custom Book Elements
 async function fetchBookData() {
+    //fetch info from NYTimes API
     try {
       const response = await fetch(apiUrl);
+      //if response != ok, throw error
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+      //take response stream and read it to completion, set it as data
       const data = await response.json();
+      //access book specific data from NYTimes API response
       const books = data.results.lists[0].books;
-
+      //container to add new custom book elements to
       const bookContainer = document.createElement('div');
 
+      //create new book-card element for every book to display
       for (const book of books) {
         const bookElement = document.createElement('book-card');
 
+        //set bookData with info of that specific book
         const bookData = {
-            titleTxt: book.title,
+            bookTitle: book.title,
             author: book.author,
             summary: book.description,
-            imgSrc: book.book_image,
-          };
+            bookImage: book.book_image,
+        };
 
+          //set book-card element data 
           bookElement.data = bookData;
+          //add current book to bookContainer
           bookContainer.appendChild(bookElement);
         }
-
-        document.body.appendChild(bookContainer);
-      } catch (error) {
+    // add bookContainer which contains all the books to the body of the site
+    document.body.appendChild(bookContainer);
+    //catch potential errors from fetching data
+    } catch (error) {
         console.error('Error fetching data:', error);
-      }
-}
-// FUNCTION: fetches book pictures from provided APIs and adds to imageArray
-async function fetchBookPictures(bookPictureURLS) {
-    const imageArray = [];
-  
-    for (const apiUrl of bookPictureURLS) {
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch image from ${apiUrl}`);
-        }
-  
-        const blob = await response.blob();
-        imageArray.push(blob);
-      } catch (error) {
-        console.error(error);
-      }
     }
-  
-    return imageArray;
-  }
-  // Now, after calling fetchBookData() to create Book elements, call fetchBookPictures() with the URLs.
-  async function fetchAndCreateBooks() {
+}
+
+// FUNCTION: call fetchBookData() within this method to pause execution until fetchBookData() is executed
+async function fetchAndCreateBooks() {
     const data = await fetchBookData();
-    const books = data.results.lists[0].books;
+}
 
-    const bookPictureURLS = books.map(book => book.book_image);
-    const imageArray = await fetchBookPictures(bookPictureURLS);
-
-    // Do something with the imageArray if needed.
-  }
-  
-  
 fetchAndCreateBooks();
   

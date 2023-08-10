@@ -56,12 +56,6 @@ class Story extends HTMLElement {
         color: #70757A;
         font-size: small;
       }
-      .line {
-        width: 90%;
-        height: 1px;
-        background-color: lightgrey;
-        margin: 0 auto;
-    }
     `;
 
 
@@ -87,17 +81,41 @@ class Story extends HTMLElement {
 }
 
 customElements.define('story-card', Story);
+const storyContainer = document.createElement('div');
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const storyCardElement = document.querySelector('story-card');
-  const storyData = {
+const storyData = [{
     imgSrc: '../images/gemini.png',
     imgAlt: 'Picture of Cat',
     titleLnk: '../html/catStory.html',
     titleTxt: "Why cats are a woman's best friend",
     summary: 'Adopting a cat just might fix the hole in your heart. Learn why this is the most feminist thing you could do.',
-    readTime: '5 MIN READ', 
-  };
-  storyCardElement.data = storyData;
+    readTime: '5 MIN READ',
+},
+{
+  imgSrc: '../images/weights.png',
+  imgAlt: 'Picture of Weights',
+  titleLnk: '../html/weights.html',
+  titleTxt: "Why lifting weights makes you hate yourself less",
+  summary: 'Discover why lifting heavy in the gym might be better than therapy and psychiatry combined.',
+  readTime: '7 MIN READ', 
+}];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const storyContainer = document.getElementById('storyContainer');
+
+  for (const [index, story] of storyData.entries()) {
+    const storyCardElement = document.createElement('story-card');
+    storyCardElement.data = story;
+    storyContainer.appendChild(storyCardElement);
+
+    // Add a gray line between each story, except after the last one
+    if (index < storyData.length - 1) {
+      const line1 = document.createElement('hr');
+      line1.classList.add('line1');
+      storyContainer.appendChild(line1);
+    }
+  }
+
+  document.body.appendChild(storyContainer);
 });
+  

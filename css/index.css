@@ -29,6 +29,12 @@ h1{
     background-color: lightgrey;
     margin: 0 auto;
 }
+.line1 {
+    width: 94%;
+    height: 5%;
+    background-color: black;
+    margin:0;
+}
 /* Double Line Styling */
 .double_line {
     border-bottom: 3px double #333;

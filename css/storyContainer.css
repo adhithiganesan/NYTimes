@@ -1,0 +1,5 @@
+#storyContainer {
+    max-width: 55%; /* Set the maximum width of the container */
+    margin: 0% 3%; /* Center the container horizontally */
+    padding: 20px; /* Add some padding around the container */
+}

@@ -20,20 +20,20 @@ class Book extends HTMLElement {
   
         bookCard {
           display: flex; /* Use flexbox to arrange the items in a row */
-          align-items: center; /* Center items vertically */
+          align-items: center; 
           padding: 16px;
         }
   
         bookCard > img {
           width: 10%;
           height: auto;
-          margin-right: 30px; /* Add some space between the image and text */
+          margin-right: 30px;
         }
   
         .text_container {
-          flex: 1; /* Allow the container to grow and take up available space */
+          flex: 1; 
           display: flex; /* Use flexbox to arrange the text in a column */
-          flex-direction: column; /* Display the elements in a column */
+          flex-direction: column; /
           align-items:flex-start;
           display: block;
         }

@@ -4,8 +4,12 @@
         <meta charset = "utf-8">
         <title> The New York Times</title>
         <meta data = "true" name = "site_description" content = "little side project by a soon to be college graduate seeking employment lol please hire me.">
-        <link rel="stylesheet" href="../css/index.css">
         <link rel="icon" type="image/png" href="../images/favicon.png">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/storyContainer.css">
+        
 
         <!--Scripts-->
         <noscript>You need to enable JavaScript to load this site.</noscript>
@@ -60,20 +64,11 @@
           <div class="double_line"></div> 
     
         <br>
-
-
-            <div class = "left_side">
-                <story-card></story-card>
-                <br>
-            </div>
-            <div class = "right_side">
-                <!--Add right side stories-->
-            </div>
-
+        <div id="storyContainer"></div>
+        <!--Story Card Custom Element-->
+        <script src="../js/story-card.js"></script>
 
     </body>
     <footer>
-        <!--Story Card Custom Element-->
-        <script src="../js/story-card.js" type="module"></script>
     </footer>
 </html>

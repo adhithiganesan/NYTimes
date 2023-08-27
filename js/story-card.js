@@ -1,3 +1,4 @@
+
 class Story extends HTMLElement {
   constructor() {
     super();
@@ -16,8 +17,8 @@ class Story extends HTMLElement {
 
       /* Custom styles for the container */
       article {
-        display: flex; /* Use flexbox to arrange the items in a row */
-        align-items: center; /* Center items vertically */
+        display: flex; 
+        align-items: center; 
         padding: 16px;
       }
 
@@ -25,14 +26,14 @@ class Story extends HTMLElement {
       article > img {
         width: 50%;
         height: auto;
-        margin-right: 30px; /* Add some space between the image and text */
+        margin-right: 30px; 
       }
 
       /* Custom styles for the text container */
       .text_container {
-        flex: 1; /* Allow the container to grow and take up available space */
-        display: flex; /* Use flexbox to arrange the text in a column */
-        flex-direction: column; /* Display the elements in a column */
+        flex: 1; 
+        display: flex;
+        flex-direction: column; 
         align-items:flex-start;
         display: block;
       }
@@ -92,6 +93,14 @@ const storyData = [{
     readTime: '5 MIN READ',
 },
 {
+  imgSrc: '../images/pomodoro.png',
+  imgAlt: 'Picture of Pomodoro Timer ',
+  titleLnk: '../html/pomodoro.html',
+  titleTxt: "Pomodoro Technique proves to be incredibly effective for studying",
+  summary: 'For people who just cannot get themself to sit and study, this technique might just be the answer.',
+  readTime: '8 MIN READ',
+},
+{
   imgSrc: '../images/weights.png',
   imgAlt: 'Picture of Weights',
   titleLnk: '../html/weights.html',
@@ -99,16 +108,42 @@ const storyData = [{
   summary: 'Discover why lifting heavy in the gym might be better than therapy and psychiatry combined.',
   readTime: '7 MIN READ', 
 }];
+//RIGHT SIDE STORY LIST
+const storyData1 = [
+{
+imgSrc: '../images/stanley.png',
+  imgAlt: 'Picture of Stanley Cup',
+  titleLnk: '../html/waterBottle.html',
+  titleTxt: "Top 5 Emotional Support Water Bottles",
+  summary: 'Check out these emotional support water bottles that you absolutely need in your life.',
+  readTime: '4 MIN READ',
+},
+{
+  imgSrc: '../images/music.png',
+    imgAlt: 'Picture of Music',
+    titleLnk: '../html/topSongs.html',
+    titleTxt: "My Favorite Songs of All Time",
+    summary: 'My top songs of all time, categorized by genre, that I would sell my soul and my firstborn to hear for the first time.',
+    readTime: '2 MIN READ',
+},
+{
+  imgSrc: '../images/painting.png',
+  imgAlt: 'Picture of Art',
+  titleLnk: '../html/healingInnerChild.html',
+  titleTxt: "Activities for your healing your inner child",
+  summary: 'Try these activities if you are feeling out of touch with who you used to be and your goals',
+  readTime: '3 MIN READ',
+}];
 
 document.addEventListener('DOMContentLoaded', () => {
   const storyContainer = document.getElementById('storyContainer');
+  const storyContainer1 = document.getElementById('storyContainer1');
 
   for (const [index, story] of storyData.entries()) {
     const storyCardElement = document.createElement('story-card');
     storyCardElement.data = story;
     storyContainer.appendChild(storyCardElement);
 
-    // Add a gray line between each story, except after the last one
     if (index < storyData.length - 1) {
       const line1 = document.createElement('hr');
       line1.classList.add('line1');
@@ -116,6 +151,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  for (const [index, story] of storyData1.entries()) {
+    const storyCardElement = document.createElement('story-card');
+    storyCardElement.data = story;
+    storyContainer1.appendChild(storyCardElement);
+
+    if (index < storyData1.length - 1) {
+      const line1 = document.createElement('hr');
+      line1.classList.add('line1');
+      storyContainer1.appendChild(line1);
+    }
+  }
+
   document.body.appendChild(storyContainer);
+  document.body.appendChild(storyContainer1);
 });
-  

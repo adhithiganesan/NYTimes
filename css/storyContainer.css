@@ -1,5 +1,30 @@
+#storyContainersWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 2%;
+}
+
 #storyContainer {
-    max-width: 55%; /* Set the maximum width of the container */
-    margin: 0% 3%; /* Center the container horizontally */
-    padding: 20px; /* Add some padding around the container */
+    float: left;
+    margin: -7% 5%;
+    width: 57%;
+    padding: 0px;
+}
+
+#storyContainer1 {
+    float: right;
+    margin: -6%;
+    margin-right: 5%;
+    width: 32%;
+    padding: 0px;
+}
+#verticalLine {
+    content: "";
+    position: absolute;
+    top: 24%;
+    bottom: 0;
+    width: 1.5px;
+    background-color: darkgray;
+    margin-left: 59%; 
+    height: 200%;
 }

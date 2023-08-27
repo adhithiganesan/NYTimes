@@ -85,7 +85,7 @@ customElements.define('story-card', Story);
 const storyContainer = document.createElement('div');
 
 const storyData = [{
-    imgSrc: '../images/gemini.png',
+    imgSrc: '../images/geminiCutie.png',
     imgAlt: 'Picture of Cat',
     titleLnk: '../html/catStory.html',
     titleTxt: "Why cats are a woman's best friend",

@@ -104,8 +104,8 @@ const storyData = [{
   imgSrc: '../images/weights.png',
   imgAlt: 'Picture of Weights',
   titleLnk: '../html/weights.html',
-  titleTxt: "Why lifting weights makes you hate yourself less",
-  summary: 'Discover why lifting heavy in the gym might be better than therapy and psychiatry combined.',
+  titleTxt: "Why lifting weights makes you feel empowered",
+  summary: 'Discover why lifting heavy in the gym boosts your confidence and makes you feel capable of anything.',
   readTime: '7 MIN READ', 
 }];
 //RIGHT SIDE STORY LIST

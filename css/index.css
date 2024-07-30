@@ -1,16 +1,18 @@
-/* H1 Styling */
-h1{
-    text-align: center;
-    display: flex;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
     display: flex;
     align-items: center;
-    justify-content: flex;
+    justify-content: flex-start;
     margin-left: 5%;
     max-width: 90%;
 }
-#date, #paper{
+
+#date, #paper {
     margin-right: 22%;
 }
 
@@ -22,42 +24,30 @@ h1{
     width: 400px;
 }
 
-/* Line Styling */
 .line {
     width: 90%;
     height: 1px;
     background-color: lightgrey;
     margin: 0 auto;
 }
-.line1 {
-    width: 94%;
-    height: 5%;
-    background-color: black;
-    margin:0;
-}
-/* Double Line Styling */
+
 .double_line {
     border-bottom: 3px double #333;
-    padding: 100px 100;
-    margin: 0 auto;
     width: 90%;
+    margin: 0 auto;
 }
-  
-/* Nav Bar Styling */
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: white;
-
-    margin-left: 120px;
 }
+
 li {
-    float:left;
-
+    float: left;
 }
-  
+
 li a {
     display: block;
     color: black;
@@ -68,26 +58,44 @@ li a {
     text-decoration: none;
 }
 
-/* Article Layout Styling */
-.whole_page {
-    width: 90%;
-    margin: 0 auto;
-}
-  
-.left_side {
-    width: calc(58% - 5%);
-    margin-left: 5%;
-    display: flex;
-    justify-content: flex-start; /* Align content to the left (start) horizontally */
-    align-items: center;
-  }
-  
-.RegionNavBar{
+/* RegionNavBar */
+.RegionNavBar {
     font-size: xx-small;
 }
-  
 
-  
+/* Navbar Container */
+.navbar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
 
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+}
 
+.navbar li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}

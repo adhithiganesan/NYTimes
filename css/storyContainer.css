@@ -21,7 +21,8 @@
 #verticalLine {
     content: "";
     position: absolute;
-    top: 24%;
+    top: 18%;
+    left: 3.5%;
     bottom: 0;
     width: 1.5px;
     background-color: darkgray;
